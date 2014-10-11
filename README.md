@@ -1,3 +1,12 @@
+# RNG on Scala.JS
+
+This has been compiled for Scala.JS and published to Maven central under `com.github.japgolly.fork.nicta:rng`.
+
+build.sbt
+```
+libraryDependencies += "com.github.japgolly.fork.nicta" %%% "rng" % "1.3.0"
+```
+
 # RNG Random Generation Library
 
 This library provides the ability for a user to generate random values of arbitrary type. It provides a pure-functional
