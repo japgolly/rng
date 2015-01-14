@@ -3,6 +3,8 @@ import Keys._
 import sbtrelease.ReleasePlugin._
 import xerial.sbt.Sonatype._
 import SonatypeKeys._
+import org.scalajs.sbtplugin.ScalaJSPlugin
+import org.scalajs.sbtplugin.ScalaJSPlugin.autoImport.toScalaJSGroupID
 
 object build extends Build {
   type Sett = Def.Setting[_]
@@ -11,8 +13,6 @@ object build extends Build {
       name := "rng"
     , organization := "com.github.japgolly.fork.nicta"
   )
-
-  import scala.scalajs.sbtplugin.ScalaJSPlugin._
 
   val sourceMapOpt = {
     val a = new java.io.File("").toURI.toString.replaceFirst("/$", "")
@@ -26,15 +26,16 @@ object build extends Build {
   , base = file(".")
   , settings = base ++ ReplSettings.all ++ releaseSettings ++ PublishSettings.all ++ InfoSettings.all ++ Seq[Sett](
       name := "rng"
+    , scalaVersion := "2.11.5"
     , scalacOptions += sourceMapOpt
     , libraryDependencies ++= Seq(
-      "com.github.japgolly.fork.scalaz"      %%% "scalaz-core"   % "7.1.0",
-      "com.github.japgolly.fork.scalaz"      %%% "scalaz-effect" % "7.1.0")
+      "com.github.japgolly.fork.scalaz"      %%% "scalaz-core"   % "7.1.0-4",
+      "com.github.japgolly.fork.scalaz"      %%% "scalaz-effect" % "7.1.0-4")
     ) ++
     net.virtualvoid.sbt.graph.Plugin.graphSettings ++
-    scalaJSBuildSettings ++
+    ScalaJSPlugin.projectSettings ++
     sonatypeSettings
-  )
+  ).enablePlugins(ScalaJSPlugin)
 
   // val examples = Project(
     // id = "examples"

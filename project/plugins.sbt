@@ -1,4 +1,4 @@
-addSbtPlugin("org.scala-lang.modules.scalajs" % "scalajs-sbt-plugin" % "0.5.4")
+addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.0-RC1")
 
 addSbtPlugin(("com.typesafe.sbt" % "sbt-pgp" % "0.8").cross(CrossVersion.full))
 
