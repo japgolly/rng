@@ -4,7 +4,7 @@ This has been compiled for Scala.JS and published to Maven central under `com.gi
 
 build.sbt
 ```
-libraryDependencies += "com.github.japgolly.fork.nicta" %%% "rng" % "1.3.0"
+libraryDependencies += "com.github.japgolly.fork.nicta" %%% "rng" % "1.3.0-2"
 ```
 
 # RNG Random Generation Library

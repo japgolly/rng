@@ -29,8 +29,8 @@ object build extends Build {
     , scalaVersion := "2.11.5"
     , scalacOptions += sourceMapOpt
     , libraryDependencies ++= Seq(
-      "com.github.japgolly.fork.scalaz"      %%% "scalaz-core"   % "7.1.0-4",
-      "com.github.japgolly.fork.scalaz"      %%% "scalaz-effect" % "7.1.0-4")
+      "com.github.japgolly.fork.scalaz"      %%% "scalaz-core"   % "7.1.1-2",
+      "com.github.japgolly.fork.scalaz"      %%% "scalaz-effect" % "7.1.1-2")
     ) ++
     net.virtualvoid.sbt.graph.Plugin.graphSettings ++
     ScalaJSPlugin.projectSettings ++
